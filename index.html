@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* logo */
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+    img {
+      width: 100px;
+    }
+    h2 {
+      text-align: center;
+      margin: 0;
+      color: black;
+    }
+    /* menu */
+    ul li {
+      display: inline;
+      margin-left: 10px;
+    }
+    section {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+    section a {
+      color: #000;
+    }
+    a.btn-dangnhap {
+      margin-left: 30px;
+      background: rgb(141, 141, 255);
+      padding: 10px;
+      color: #fff;
+    }
+    /* search */
+    div {
+      display: flex;
+      flex-flow: column;
+      align-items: end;
+    }
+    input {
+      padding: 5px;
+    }
+    button {
+      padding: 6px;
+      background: rgb(141, 141, 255);
+      border: none;
+    }
+  </style>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- logo -->
+      <a href="#">
+        <img src="/images/logo.png" />
+        <h2>Tien Store</h2>
+      </a>
+      <div>
+        <section>
+          <!-- menu -->
+          <ul>
+            <li>
+              <a href="#">Trang chủ</a>
+            </li>
+            <li>
+              <a href="#">Giới thiệu</a>
+            </li>
+            <li>
+              <a href="#">Sản phẩm</a>
+            </li>
+            <li>
+              <a href="#">Liên hệ</a>
+            </li>
+          </ul>
+          <!-- dang nhap -->
+          <a href="#" class="btn-dangnhap">Đăng nhập</a>
+        </section>
+        <form action="#">
+          <input type="text" placeholder="Tìm kiếm" />
+
+          <button>Tìm</button>
+        </form>
+      </div>
+    </header>
+  </body>
+</html>
