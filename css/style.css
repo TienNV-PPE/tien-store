@@ -1,0 +1,109 @@
+header, main, footer > div {
+  max-width: 1200px;
+  margin: auto;
+}
+/* header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+/* logo */
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+img {
+  width: 100px;
+}
+.logo h2 {
+  text-align: center;
+  margin: 0;
+  color: black;
+}
+/* menu */
+ul.menu li {
+  display: inline;
+  margin-left: 10px;
+}
+section.menu-dangnhap {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+section a {
+  color: #000;
+}
+a.btn-dangnhap {
+  margin-left: 30px;
+  background: rgb(141, 141, 255);
+  padding: 10px;
+  color: #fff;
+}
+/* search */
+div.menu-timkiem {
+  display: flex;
+  flex-flow: column;
+  align-items: end;
+}
+input {
+  padding: 5px;
+}
+button {
+  padding: 6px;
+  background: rgb(141, 141, 255);
+  border: none;
+}
+
+/* main */
+
+main {
+  margin-top: 20px;
+}
+main ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+main ul li {
+  margin-left: 10px;
+}
+main ul li:first-child {
+  margin-left: 0;
+}
+main ul img {
+  width: 100%;
+}
+
+/* SAN PHAM */
+.sanpham-link:hover{
+opacity: .7;
+}
+.sanpham-tieude, .sanpham-gia{
+  margin: 5px 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.sanpham-gia{
+  font-size: 1rem;
+  color: red;
+}
+.sanpham-tieudelon a{
+  color: blue;
+}
+.sanpham ul{
+  margin-bottom: 1em;
+}
+/* footer */
+footer{
+  background-color: #ccc;
+  padding: 1rem;
+}
+.gioithieu-store{
+  width: 30%;
+}
+.store-map{
+  width: 70%;
+}
