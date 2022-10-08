@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.fij{
+  @apply flex items-center justify-between
+}
+.ten-cong-ty{
+  @apply text-7xl text-chiThao-600 bg-yellow-400 font-black
+}
