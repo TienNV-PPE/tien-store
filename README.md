@@ -2,6 +2,12 @@
 
 CÔNG TY TNHH XUẤT BẢN PHẦN MỀM PARACEL PROJECT EDUCATION. Hân hạnh giới thiệu chương trình học lập trình trải nghiệm thực tế.
 
+## Start tailwind
+
+```
+npx tailwindcss -i ./css/tailwind/input.css -o ./css/tailwind/output.css --watch
+```
+
 ## Khoá học
 
 #### Học trực tuyến

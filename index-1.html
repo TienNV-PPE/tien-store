@@ -7,20 +7,80 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Document</title>
+    <title>Tailwind</title>
     <link href="./css/tailwind/output.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="flex">
-      <p class="ten-cong-ty">
-        CÔNG TY TNHH XUẤT BẢN PHẦN MỀM PARACEL PROJECT EDUCATION
-      </p>
-      <div class="bg-gray-200 p-10 border-4 border-blue-300">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Accusamus harum alias animi nemo provident ea ratione
-        laudantium blanditiis dolorem ipsam, iusto quisquam suscipit
-        laboriosam corporis earum totam porro facilis atque.
+    <header class="max-w-screen-xl m-auto p-4">
+      <div class="fij">
+        <!-- logo -->
+        <a href="/" class="inline-block hover:opacity-50 text-center">
+          <img
+            class="w-12 sm:w-28 m-auto"
+            src="./images/logo.png"
+            alt=""
+          />
+          <h2 class="text-xl font-bold whitespace-nowrap">
+            Tien Store
+          </h2>
+        </a>
+        <!-- menu & dangnhap & timkiem -->
+        <div class="flex flex-col items-end space-y-3">
+          <!-- menu & dangnhap -->
+          <section
+            class="hidden sm:flex items-center justify-between space-x-3"
+          >
+            <!-- menu -->
+            <ul class="menu">
+              <li>
+                <a href="#" class="text-blue-500">Trang chủ</a>
+              </li>
+              <li>
+                <a href="#">Giới thiệu</a>
+              </li>
+              <li>
+                <a href="#">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="#">Liên hệ</a>
+              </li>
+            </ul>
+            <!-- dangnhap -->
+            <button class="btn whitespace-nowrap">Đăng nhập</button>
+          </section>
+          <!-- form tim kiem -->
+          <form action="" class="flex rounded overflow-hidden">
+            <input
+              placeholder="Tìm kiếm"
+              type="text"
+              class="w-32 sm:w-auto py-2 px-2 border-gray-400 border-l border-t border-b rounded-l overflow-hidden"
+            />
+            <button class="bg-blue-600 text-white px-4 py-2">
+              Tìm
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+      <!-- MOBILE: menu & dangnhap -->
+      <section
+        class="flex sm:hidden bg-blue-100 py-3 -mx-4 items-center justify-center space-x-3 mt-4"
+      >
+        <!-- menu -->
+        <ul class="menu">
+          <li>
+            <a href="#" class="text-blue-500">Trang chủ</a>
+          </li>
+          <li>
+            <a href="#">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="#">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="#">Liên hệ</a>
+          </li>
+        </ul>
+      </section>
+    </header>
   </body>
 </html>

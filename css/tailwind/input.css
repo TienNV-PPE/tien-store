@@ -9,3 +9,14 @@
 .ten-cong-ty{
   @apply text-7xl text-chiThao-600 bg-yellow-400 font-black
 }
+.btn{
+  @apply bg-blue-600 text-white px-4 py-2 rounded
+}
+
+.menu{
+  @apply flex space-x-3
+}
+
+.menu li a{
+  @apply hover:text-blue-500
+}
