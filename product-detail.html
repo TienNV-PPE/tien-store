@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Trang chu</title>
+    <title>Chi tiet san pham</title>
     <link href="./css/tailwind/output.css" rel="stylesheet" />
     <!-- <link
       rel="stylesheet"
@@ -67,10 +67,22 @@
             <input
               placeholder="Tìm kiếm"
               type="text"
-              class="w-32 sm:w-auto py-2 px-2 border-gray-400 border-l border-t border-b rounded-l overflow-hidden"
+              class="input-search"
             />
-            <button class="bg-blue-600 text-white px-4 py-2">
-              Tìm
+            <button
+              class="bg-blue-600 text-white px-4 py-2 flex items-center space-x-2"
+            >
+              <svg
+                class="h-4 w-4 text-grey-dark"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                />
+              </svg>
+              <span>Tìm</span>
             </button>
           </form>
         </div>
@@ -96,13 +108,233 @@
         </ul>
       </section>
     </header>
+
     <!-- main -->
     <main class="max-w-screen-xl m-auto p-4">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-      Aperiam, nostrum vel numquam, ad maiores sapiente dolores autem
-      aut repellendus reiciendis dolorum voluptatum, nesciunt
-      adipisci. Provident, nihil pariatur? Similique, nemo magni.
+      <div class="antialiased">
+        <div class="">
+          <!-- Breadcrumbs -->
+          <div class="">
+            <div
+              class="flex items-center space-x-2 text-gray-400 text-sm"
+            >
+              <a href="./" class="hover:underline hover:text-gray-600"
+                >Trang chủ</a
+              >
+              <span>
+                <svg
+                  class="h-5 w-5 leading-none text-gray-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+              <a
+                href="./san-pham.html"
+                class="hover:underline hover:text-gray-600"
+                >Sản phẩm</a
+              >
+              <span>
+                <svg
+                  class="h-5 w-5 leading-none text-gray-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+              <span>Đông Trùng Hạ Thảo Khô 20gram</span>
+            </div>
+          </div>
+          <!-- ./ Breadcrumbs -->
+
+          <div class="mt-6">
+            <div class="flex flex-col md:flex-row -mx-4">
+              <div class="md:flex-1 px-4">
+                <div x-data="{ image: 1 }" x-cloak>
+                  <div
+                    class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 overflow-hidden border-4"
+                  >
+                    <div
+                      x-show="image === 1"
+                      class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"
+                    >
+                      <img
+                        src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-10g.jpg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div
+                      x-show="image === 2"
+                      class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"
+                    >
+                      <img
+                        src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-200g.jpg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div
+                      x-show="image === 3"
+                      class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"
+                    >
+                      <img
+                        src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-mat-ong.jpg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div
+                      x-show="image === 4"
+                      class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"
+                    >
+                      <img
+                        src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-10g.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+
+                  <!-- <div class="flex -mx-2 mb-4">
+                    <template x-for="i in 4">
+                      <div class="flex-1 px-2">
+                        <button
+                          x-on:click="image = i"
+                          :class="{ 'ring-2 ring-indigo-300 ring-inset': image === i }"
+                          class="focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center"
+                        >
+                          <span x-text="i" class="text-2xl"></span>
+                        </button>
+                      </div>
+                    </template>
+                  </div> -->
+                  <div class="flex -mx-2 mb-4">
+                    <div class="flex-1 px-2">
+                      <button
+                        x-on:click="image = 1"
+                        :class="{ 'border-indigo-300 ': image === 1 }"
+                        class="chitiet-slider-item"
+                      >
+                        <img
+                          src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-10g.jpg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+
+                    <div class="flex-1 px-2">
+                      <button
+                        x-on:click="image = 2"
+                        :class="{ 'border-indigo-300 ': image === 2 }"
+                        class="chitiet-slider-item"
+                      >
+                        <img
+                          src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-200g.jpg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+
+                    <div class="flex-1 px-2">
+                      <button
+                        x-on:click="image = 3"
+                        :class="{ 'border-indigo-300 ': image === 3 }"
+                        class="chitiet-slider-item"
+                      >
+                        <img
+                          src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-mat-ong.jpg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+
+                    <div class="flex-1 px-2">
+                      <button
+                        x-on:click="image = 4"
+                        :class="{ 'border-indigo-300 ': image === 4 }"
+                        class="chitiet-slider-item"
+                      >
+                        <img
+                          src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-10g.jpg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="md:flex-1 px-4">
+                <h2
+                  class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl"
+                >
+                  Đông Trùng Hạ Thảo Khô 20gram
+                </h2>
+                <p class="text-gray-500 text-sm">
+                  Bởi
+                  <a href="#" class="text-indigo-600 hover:underline"
+                    >Sonita Company</a
+                  >
+                </p>
+
+                <div class="flex items-center space-x-4 my-4">
+                  <div>
+                    <div
+                      class="rounded-lg bg-gray-100 flex py-2 px-3"
+                    >
+                      <span class="font-bold text-indigo-600 text-3xl"
+                        >1.300.000 ₫
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-gray-400 text-sm">Bao gồm thuế.</p>
+                  </div>
+                </div>
+
+                <p class="text-gray-500">
+                  20 gram nấm Đông Trùng Hạ Thảo khô sấy thăng hoa,
+                  (công nghệ Mỹ, hiện đại nhất trong các loại sấy, giữ
+                  chất lượng sản phẩm được tốt nhất
+                </p>
+
+                <div class="flex py-4 space-x-4">
+                  <div class="relative">
+                    <select class="input">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+
+                  <button type="button" class="btn">
+                    Thêm vào giỏ hàng
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
     <footer class="max-w-screen-xl m-auto p-4">
       <div class="sm:-mx-4 sm:flex sm:flex-wrap sm:pt-12">
         <div class="sm:w-full px-4 md:w-1/3">
@@ -148,23 +380,4 @@
     </footer>
   </body>
 </html>
-<!-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> -->
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
-
-<script>
-  $(document).ready(function () {
-    $('.owl-carousel-basic').owlCarousel({
-      autoplay: true,
-      center: true, // true，下面的點點＝總數量
-      margin: 15,
-      autoplayTimeout: 2000,
-      loop: true, // 數量不夠時，可以取用到第一個
-      nav: false, // 是否，顯示< >圖標
-      items: 1,
-    });
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js"></script>
