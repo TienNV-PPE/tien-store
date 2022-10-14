@@ -39,5 +39,5 @@ background: rgb(0 0 0 / 50%);
 
 /* chitiet-sanpham */
 .chitiet-slider-item{
-  @apply focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center ring-2 ring-indigo-300 ring-inset border-4 overflow-hidden
+  @apply focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center ring-2 ring-indigo-300 ring-inset border-4 overflow-hidden ring-0
 }
