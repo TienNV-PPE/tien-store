@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>List san pham</title>
+    <link href="./css/tailwind/output.css" rel="stylesheet" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.4.0/dist/flowbite.min.css"
+    /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="max-w-screen-xl m-auto p-4">
+      <div class="fij">
+        <!-- logo -->
+        <a href="/" class="inline-block hover:opacity-50 text-center">
+          <img
+            class="w-12 sm:w-28 m-auto"
+            src="./images/logo.png"
+            alt=""
+          />
+          <h2 class="text-xl font-bold whitespace-nowrap">
+            Tien Store
+          </h2>
+        </a>
+        <!-- menu & dangnhap & timkiem -->
+        <div class="flex flex-col items-end space-y-3">
+          <!-- menu & dangnhap -->
+          <section
+            class="hidden sm:flex items-center justify-between space-x-3"
+          >
+            <!-- menu -->
+            <ul class="menu">
+              <li>
+                <a href="./index.html">Trang chủ</a>
+              </li>
+              <li>
+                <a href="./gioi-thieu.html">Giới thiệu</a>
+              </li>
+              <li>
+                <a href="./list-sanpham.html" class="text-blue-500"
+                  >Sản phẩm</a
+                >
+              </li>
+              <li>
+                <a href="#">Liên hệ</a>
+              </li>
+            </ul>
+            <!-- dangnhap -->
+            <button class="btn whitespace-nowrap">Đăng nhập</button>
+          </section>
+          <!-- form tim kiem -->
+          <form action="" class="flex rounded overflow-hidden">
+            <input
+              placeholder="Tìm kiếm"
+              type="text"
+              class="input-search"
+            />
+            <button class="bg-blue-600 text-white px-4 py-2">
+              Tìm
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- MOBILE: menu & dangnhap -->
+      <section
+        class="flex sm:hidden bg-blue-100 py-3 -mx-4 items-center justify-center space-x-3 mt-4"
+      >
+        <!-- menu -->
+        <ul class="menu">
+          <li>
+            <a href="#">Trang chủ</a>
+          </li>
+          <li>
+            <a href="#">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="./list-sanpham.html" class="text-blue-500"
+              >Sản phẩm</a
+            >
+          </li>
+          <li>
+            <a href="#">Liên hệ</a>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <!-- main -->
+    <main class="max-w-screen-xl m-auto p-4">
+      <!-- START: san pham moi -->
+      <div class="grid grid-cols-12 gap-4">
+        <div class="hidden sm:block col-span-4">
+          <!-- title -->
+          <div class="fij">
+            <h1 class="font-bold text-xl mb-4">Bộ lọc</h1>
+          </div>
+          <!-- START: PRODUCT FILTER -->
+          <form class="hidden lg:block">
+            <h3 class="sr-only">Categories</h3>
+            <ul
+              role="list"
+              class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
+            >
+              <li>
+                <a href="#">Sản Phẩm Khuyến Mãi</a>
+              </li>
+
+              <li>
+                <a href="#">Thịt bò nhập khẩu</a>
+              </li>
+
+              <li>
+                <a href="#">Thế giới cực phẩm</a>
+              </li>
+            </ul>
+
+            <div
+              x-data="{ open: false }"
+              class="border-b border-gray-200 py-6"
+            >
+              <h3 class="-my-3 flow-root">
+                <button
+                  type="button"
+                  x-description="Expand/collapse section button"
+                  class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
+                  aria-controls="filter-section-0"
+                  @click="open = !open"
+                  aria-expanded="true"
+                  x-bind:aria-expanded="open.toString()"
+                >
+                  <span class="font-medium text-gray-900"
+                    >Xuất xứ</span
+                  >
+                  <span class="ml-6 flex items-center">
+                    <svg
+                      class="h-5 w-5"
+                      x-description="Expand icon, show/hide based on section open state.
+
+Heroicon name: mini/plus"
+                      x-show="!(open)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      style="display: none"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      x-description="Collapse icon, show/hide based on section open state.
+
+Heroicon name: mini/minus"
+                      x-show="open"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div
+                class="pt-6"
+                x-description="Filter section, show/hide based on section state."
+                id="filter-section-0"
+                x-show="open"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <input
+                      id="filter-color-0"
+                      name="color[]"
+                      value="white"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-color-0"
+                      class="ml-3 text-sm text-gray-600"
+                      >Thịt Bò Wagyu Nhật A5, A4, A3</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-color-1"
+                      name="color[]"
+                      value="beige"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-color-1"
+                      class="ml-3 text-sm text-gray-600"
+                      >Thịt Bò Kobe Nhật</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              x-data="{ open: false }"
+              class="border-b border-gray-200 py-6"
+            >
+              <h3 class="-my-3 flow-root">
+                <button
+                  type="button"
+                  x-description="Expand/collapse section button"
+                  class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
+                  aria-controls="filter-section-1"
+                  @click="open = !open"
+                  aria-expanded="true"
+                  x-bind:aria-expanded="open.toString()"
+                >
+                  <span class="font-medium text-gray-900"
+                    >Danh mục</span
+                  >
+                  <span class="ml-6 flex items-center">
+                    <svg
+                      class="h-5 w-5"
+                      x-description="Expand icon, show/hide based on section open state.
+
+Heroicon name: mini/plus"
+                      x-show="!(open)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      style="display: none"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      x-description="Collapse icon, show/hide based on section open state.
+
+Heroicon name: mini/minus"
+                      x-show="open"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div
+                class="pt-6"
+                x-description="Filter section, show/hide based on section state."
+                id="filter-section-1"
+                x-show="open"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <input
+                      id="filter-category-0"
+                      name="category[]"
+                      value="new-arrivals"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-category-0"
+                      class="ml-3 text-sm text-gray-600"
+                      >Thịt bò</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-category-1"
+                      name="category[]"
+                      value="sale"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-category-1"
+                      class="ml-3 text-sm text-gray-600"
+                      >Đông trùng hạ thảo</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-category-2"
+                      name="category[]"
+                      value="travel"
+                      type="checkbox"
+                      checked=""
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-category-2"
+                      class="ml-3 text-sm text-gray-600"
+                      >Trái cây</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-category-3"
+                      name="category[]"
+                      value="organization"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-category-3"
+                      class="ml-3 text-sm text-gray-600"
+                      >Organization</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-category-4"
+                      name="category[]"
+                      value="accessories"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-category-4"
+                      class="ml-3 text-sm text-gray-600"
+                      >Accessories</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              x-data="{ open: false }"
+              class="border-b border-gray-200 py-6"
+            >
+              <h3 class="-my-3 flow-root">
+                <button
+                  type="button"
+                  x-description="Expand/collapse section button"
+                  class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
+                  aria-controls="filter-section-2"
+                  @click="open = !open"
+                  aria-expanded="true"
+                  x-bind:aria-expanded="open.toString()"
+                >
+                  <span class="font-medium text-gray-900">Size</span>
+                  <span class="ml-6 flex items-center">
+                    <svg
+                      class="h-5 w-5"
+                      x-description="Expand icon, show/hide based on section open state.
+
+Heroicon name: mini/plus"
+                      x-show="!(open)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      style="display: none"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      x-description="Collapse icon, show/hide based on section open state.
+
+Heroicon name: mini/minus"
+                      x-show="open"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div
+                class="pt-6"
+                x-description="Filter section, show/hide based on section state."
+                id="filter-section-2"
+                x-show="open"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <input
+                      id="filter-size-0"
+                      name="size[]"
+                      value="2l"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-size-0"
+                      class="ml-3 text-sm text-gray-600"
+                      >2L</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-size-1"
+                      name="size[]"
+                      value="6l"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-size-1"
+                      class="ml-3 text-sm text-gray-600"
+                      >6L</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-size-2"
+                      name="size[]"
+                      value="12l"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-size-2"
+                      class="ml-3 text-sm text-gray-600"
+                      >12L</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-size-3"
+                      name="size[]"
+                      value="18l"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-size-3"
+                      class="ml-3 text-sm text-gray-600"
+                      >18L</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-size-4"
+                      name="size[]"
+                      value="20l"
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-size-4"
+                      class="ml-3 text-sm text-gray-600"
+                      >20L</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="filter-size-5"
+                      name="size[]"
+                      value="40l"
+                      type="checkbox"
+                      checked=""
+                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="filter-size-5"
+                      class="ml-3 text-sm text-gray-600"
+                      >40L</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- END: PRODUCT FILTER -->
+        </div>
+        <!-- START: 2/3 GRID -->
+        <div class="col-span-12 sm:col-span-8">
+          <!-- title -->
+          <div class="fij">
+            <h1 class="font-bold text-xl mb-4">
+              Tất cả sản phẩm (10,000)
+            </h1>
+          </div>
+          <!-- ✅ Grid Section - Starts Here 👇 -->
+          <section
+            class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center justify-center gap-8 mt-3 mb-5"
+          >
+            <!--   ✅ Product card 1 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="./product-detail.html">
+                <img
+                  src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-200g.jpg"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >sonita</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black block capitalize line-clamp-2"
+                  >
+                    Đông Trùng Hạ Thảo Khô 20gram
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      1.300.000 ₫
+                    </p>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 1 - Ends Here  -->
+
+            <!--   ✅ Product card 2 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950537598-373e4358d320?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 2 - Ends Here  -->
+
+            <!--   ✅ Product card 3 - Starts Here 👇 -->
+            <!--   ✅ Product card 1 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 1 - Ends Here  -->
+
+            <!--   ✅ Product card 2 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950537598-373e4358d320?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 2 - Ends Here  -->
+
+            <!--   ✅ Product card 1 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 1 - Ends Here  -->
+
+            <!--   ✅ Product card 2 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950537598-373e4358d320?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 2 - Ends Here  -->
+
+            <!--   ✅ Product card 3 - Starts Here 👇 -->
+            <!--   ✅ Product card 1 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 1 - Ends Here  -->
+
+            <!--   ✅ Product card 2 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950537598-373e4358d320?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 2 - Ends Here  -->
+
+            <!--   ✅ Product card 3 - Starts Here 👇 -->
+            <!--   ✅ Product card 1 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 1 - Ends Here  -->
+
+            <!--   ✅ Product card 2 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950537598-373e4358d320?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 2 - Ends Here  -->
+
+            <!--   ✅ Product card 3 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950519238-15835722f8bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 3 - Ends Here  -->
+            <!--   ✅ Product card 3 - Starts Here 👇 -->
+            <div
+              class="bg-white w-full shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src="https://images.unsplash.com/photo-1651950519238-15835722f8bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Product"
+                  class="h-80 w-full object-cover rounded-t-xl"
+                />
+                <div class="px-4 py-3">
+                  <span class="text-gray-400 mr-3 uppercase text-xs"
+                    >Brand</span
+                  >
+                  <p
+                    class="text-lg font-bold text-black truncate block capitalize"
+                  >
+                    Product Name
+                  </p>
+                  <div class="flex items-center">
+                    <p
+                      class="text-lg font-semibold text-black cursor-auto my-3"
+                    >
+                      $149
+                    </p>
+                    <del>
+                      <p
+                        class="text-sm text-gray-600 cursor-auto ml-2"
+                      >
+                        $199
+                      </p>
+                    </del>
+                    <div class="ml-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--   🛑 Product card 3 - Ends Here  -->
+          </section>
+          <!-- 🛑 Grid Section - Ends Here -->
+          <!-- START: Pagination -->
+          <div class="container mx-auto p-4">
+            <nav
+              class="flex flex-row flex-nowrap justify-between md:justify-center items-center"
+              aria-label="Pagination"
+            >
+              <a
+                class="flex w-10 h-10 mr-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+                href="#"
+                title="Previous Page"
+              >
+                <span class="sr-only">Previous Page</span>
+                <svg
+                  class="block w-4 h-4 fill-current"
+                  viewBox="0 0 256 512"
+                  aria-hidden="true"
+                  role="presentation"
+                >
+                  <path
+                    d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+                href="#"
+                title="Page 1"
+              >
+                1
+              </a>
+              <a
+                class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+                href="#"
+                title="Page 2"
+              >
+                2
+              </a>
+              <a
+                class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-black bg-black text-white pointer-events-none"
+                href="#"
+                aria-current="page"
+                title="Page 3"
+              >
+                3
+              </a>
+              <a
+                class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+                href="#"
+                title="Page 4"
+              >
+                4
+              </a>
+              <a
+                class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+                href="#"
+                title="Page 5"
+              >
+                5
+              </a>
+              <a
+                class="flex w-10 h-10 ml-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+                href="#"
+                title="Next Page"
+              >
+                <span class="sr-only">Next Page</span>
+                <svg
+                  class="block w-4 h-4 fill-current"
+                  viewBox="0 0 256 512"
+                  aria-hidden="true"
+                  role="presentation"
+                >
+                  <path
+                    d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"
+                  ></path>
+                </svg>
+              </a>
+            </nav>
+          </div>
+          <!-- END: Pagination -->
+        </div>
+        <!-- END: 2/3 GRID -->
+      </div>
+    </main>
+    <!-- START: Call to action -->
+    <div
+      class="relative bg-cover bg-no-repeat bg-center"
+      style="
+        min-height: 400px;
+        background-image: url('./images/sliders/2.jpeg');
+      "
+      title="Bali, Indonesia"
+    >
+      <div
+        class="flex flex-col justify-center items-center absolute inset-0 bg-black opacity-75 text-center text-white p-10"
+      >
+        <h2 class="font-serif text-2xl md:text-3xl">
+          Bạn cần hỗ trợ
+        </h2>
+        <p>Hãy gọi ngay cho chúng tôi để được tư vấn miễn phí</p>
+        <button
+          class="bg-transparent hover:bg-white text-white font-bold hover:text-black py-2 px-4 my-4 border border-white rounded inline-flex items-center"
+        >
+          <span>0344.70.3838</span>
+          <svg
+            class="ml-2 w-4 h-4 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- END: Call to action -->
+
+    <footer class="max-w-screen-xl m-auto p-4">
+      <div class="sm:-mx-4 sm:flex sm:flex-wrap sm:pt-12">
+        <div class="sm:w-full px-4 md:w-1/3">
+          <!-- logo -->
+          <a
+            href="/"
+            class="inline-block hover:opacity-50 text-center"
+          >
+            <img
+              class="w-12 sm:w-28 m-auto"
+              src="./images/logo.png"
+              alt=""
+            />
+            <h2 class="text-xl font-bold whitespace-nowrap">
+              Tien Store
+            </h2>
+          </a>
+          <p class="">
+            Là một cửa hàng uy tín, chuyên cung cấp nông sản sạch, đảm
+            bảo chất lượng
+          </p>
+        </div>
+        <div class="px-4 sm:w-1/2 md:w-1/3 mt-4 md:mt-0">
+          <h6 class="font-bold mb-2">Địa chỉ</h6>
+          <address class="not-italic mb-4">
+            K81/A3 Lê Văn Hiến, Đà Nắng
+          </address>
+          <h6 class="font-bold mb-2">SĐT</h6>
+          <p>0344 70 3838</p>
+        </div>
+        <div class="px-4 mt-6 sm:mt-4 md:mt-0 md:w-1/3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.658257381416!2d108.21196671448398!3d16.031295788904373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219ed52e25555%3A0x77ca5b75b6967dd2!2zQ8O0bmcgVHkgVG5oaCBYdeG6pXQgQuG6o24gUGjhuqduIE3hu4FtIFBhcmFjZWwgUHJvamVjdCBFZHVjYXRpb24!5e0!3m2!1sen!2s!4v1665118545024!5m2!1sen!2s"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<!-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.owl-carousel-basic').owlCarousel({
+      autoplay: true,
+      center: true, // true，下面的點點＝總數量
+      margin: 15,
+      autoplayTimeout: 2000,
+      loop: true, // 數量不夠時，可以取用到第一個
+      nav: false, // 是否，顯示< >圖標
+      items: 1,
+    });
+  });
+</script>

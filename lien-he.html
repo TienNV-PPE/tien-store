@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Lien he</title>
+    <link href="./css/tailwind/output.css" rel="stylesheet" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.4.0/dist/flowbite.min.css"
+    /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="max-w-screen-xl m-auto p-4">
+      <div class="fij">
+        <!-- logo -->
+        <a href="/" class="inline-block hover:opacity-50 text-center">
+          <img
+            class="w-12 sm:w-28 m-auto"
+            src="./images/logo.png"
+            alt=""
+          />
+          <h2 class="text-xl font-bold whitespace-nowrap">
+            Tien Store
+          </h2>
+        </a>
+        <!-- menu & dangnhap & timkiem -->
+        <div class="flex flex-col items-end space-y-3">
+          <!-- menu & dangnhap -->
+          <section
+            class="hidden sm:flex items-center justify-between space-x-3"
+          >
+            <!-- menu -->
+            <ul class="menu">
+              <li>
+                <a href="./index.html">Trang chủ</a>
+              </li>
+              <li>
+                <a href="./gioi-thieu.html">Giới thiệu</a>
+              </li>
+              <li>
+                <a href="./list-sanpham.html">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="./lien-he.html" class="text-blue-500"
+                  >Liên hệ</a
+                >
+              </li>
+            </ul>
+            <!-- dangnhap -->
+            <button class="btn whitespace-nowrap">Đăng nhập</button>
+          </section>
+          <!-- form tim kiem -->
+          <form action="" class="flex rounded overflow-hidden">
+            <input
+              placeholder="Tìm kiếm"
+              type="text"
+              class="input-search"
+            />
+            <button class="bg-blue-600 text-white px-4 py-2">
+              Tìm
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- MOBILE: menu & dangnhap -->
+      <section
+        class="flex sm:hidden bg-blue-100 py-3 -mx-4 items-center justify-center space-x-3 mt-4"
+      >
+        <!-- menu -->
+        <ul class="menu">
+          <li>
+            <a href="#">Trang chủ</a>
+          </li>
+          <li>
+            <a href="#">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="#">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="./lien-he.html" class="text-blue-500">Liên hệ</a>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <!-- main -->
+    <main class="max-w-screen-xl m-auto p-4 bg-gray-50">
+      <section class="text-gray-600 body-font relative">
+        <div class="container px-5 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+            >
+              Liên hệ
+            </h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              Hãy gọi cho chúng tôi bất cứ khi nào bạn cần!
+            </p>
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label
+                    for="name"
+                    class="leading-7 text-sm text-gray-600"
+                    >Họ& Tên</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label
+                    for="email"
+                    class="leading-7 text-sm text-gray-600"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label
+                    for="message"
+                    class="leading-7 text-sm text-gray-600"
+                    >Tin nhắn</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <button
+                  class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
+                  Gửi
+                </button>
+              </div>
+              <div
+                class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+              >
+                <a class="text-indigo-500">tien.codeby@gmail.com</a>
+                <p class="leading-normal my-5">
+                  K81/A3 Lê Văn Hiến, Đà Nắng
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- START: Call to action -->
+    <div
+      class="relative bg-cover bg-no-repeat bg-center"
+      style="
+        min-height: 400px;
+        background-image: url('./images/sliders/2.jpeg');
+      "
+      title="Bali, Indonesia"
+    >
+      <div
+        class="flex flex-col justify-center items-center absolute inset-0 bg-black opacity-75 text-center text-white p-10"
+      >
+        <h2 class="font-serif text-2xl md:text-3xl">
+          Bạn cần hỗ trợ
+        </h2>
+        <p>Hãy gọi ngay cho chúng tôi để được tư vấn miễn phí</p>
+        <button
+          class="bg-transparent hover:bg-white text-white font-bold hover:text-black py-2 px-4 my-4 border border-white rounded inline-flex items-center"
+        >
+          <span>0344.70.3838</span>
+          <svg
+            class="ml-2 w-4 h-4 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- END: Call to action -->
+
+    <footer class="max-w-screen-xl m-auto p-4">
+      <div class="sm:-mx-4 sm:flex sm:flex-wrap sm:pt-12">
+        <div class="sm:w-full px-4 md:w-1/3">
+          <!-- logo -->
+          <a
+            href="/"
+            class="inline-block hover:opacity-50 text-center"
+          >
+            <img
+              class="w-12 sm:w-28 m-auto"
+              src="./images/logo.png"
+              alt=""
+            />
+            <h2 class="text-xl font-bold whitespace-nowrap">
+              Tien Store
+            </h2>
+          </a>
+          <p class="">
+            Là một cửa hàng uy tín, chuyên cung cấp nông sản sạch, đảm
+            bảo chất lượng
+          </p>
+        </div>
+        <div class="px-4 sm:w-1/2 md:w-1/3 mt-4 md:mt-0">
+          <h6 class="font-bold mb-2">Địa chỉ</h6>
+          <address class="not-italic mb-4">
+            K81/A3 Lê Văn Hiến, Đà Nắng
+          </address>
+          <h6 class="font-bold mb-2">SĐT</h6>
+          <p>0344 70 3838</p>
+        </div>
+        <div class="px-4 mt-6 sm:mt-4 md:mt-0 md:w-1/3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.658257381416!2d108.21196671448398!3d16.031295788904373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219ed52e25555%3A0x77ca5b75b6967dd2!2zQ8O0bmcgVHkgVG5oaCBYdeG6pXQgQuG6o24gUGjhuqduIE3hu4FtIFBhcmFjZWwgUHJvamVjdCBFZHVjYXRpb24!5e0!3m2!1sen!2s!4v1665118545024!5m2!1sen!2s"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<!-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.owl-carousel-basic').owlCarousel({
+      autoplay: true,
+      center: true, // true，下面的點點＝總數量
+      margin: 15,
+      autoplayTimeout: 2000,
+      loop: true, // 數量不夠時，可以取用到第一個
+      nav: false, // 是否，顯示< >圖標
+      items: 1,
+    });
+  });
+</script>

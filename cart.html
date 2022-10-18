@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Chi tiet san pham</title>
+    <link href="./css/tailwind/output.css" rel="stylesheet" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.4.0/dist/flowbite.min.css"
+    /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="max-w-screen-xl m-auto p-4">
+      <div class="fij">
+        <!-- logo -->
+        <a href="/" class="inline-block hover:opacity-50 text-center">
+          <img
+            class="w-12 sm:w-28 m-auto"
+            src="./images/logo.png"
+            alt=""
+          />
+          <h2 class="text-xl font-bold whitespace-nowrap">
+            Tien Store
+          </h2>
+        </a>
+        <!-- menu & dangnhap & timkiem -->
+        <div class="flex flex-col items-end space-y-3">
+          <!-- menu & dangnhap -->
+          <section
+            class="hidden sm:flex items-center justify-between space-x-3"
+          >
+            <!-- menu -->
+            <ul class="menu">
+              <li>
+                <a href="#" class="text-blue-500">Trang chủ</a>
+              </li>
+              <li>
+                <a href="#">Giới thiệu</a>
+              </li>
+              <li>
+                <a href="#">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="#">Liên hệ</a>
+              </li>
+            </ul>
+            <!-- dangnhap -->
+            <button class="btn whitespace-nowrap">Đăng nhập</button>
+          </section>
+          <!-- form tim kiem -->
+          <form action="" class="flex rounded overflow-hidden">
+            <input
+              placeholder="Tìm kiếm"
+              type="text"
+              class="input-search"
+            />
+            <button
+              class="bg-blue-600 text-white px-4 py-2 flex items-center space-x-2"
+            >
+              <svg
+                class="h-4 w-4 text-grey-dark"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                />
+              </svg>
+              <span>Tìm</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- MOBILE: menu & dangnhap -->
+      <section
+        class="flex sm:hidden bg-blue-100 py-3 -mx-4 items-center justify-center space-x-3 mt-4"
+      >
+        <!-- menu -->
+        <ul class="menu">
+          <li>
+            <a href="#" class="text-blue-500">Trang chủ</a>
+          </li>
+          <li>
+            <a href="#">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="#">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="#">Liên hệ</a>
+          </li>
+        </ul>
+      </section>
+    </header>
+
+    <!-- main -->
+    <main class="max-w-screen-xl m-auto p-4">
+      <div class="container mx-auto mt-10">
+        <div class="flex my-10">
+          <div class="w-3/4 bg-white py-10">
+            <div class="flex justify-between border-b pb-8">
+              <h1 class="font-semibold text-2xl">Giỏ hàng</h1>
+              <h2 class="font-semibold text-2xl">3 mặt hàng</h2>
+            </div>
+            <div class="flex mt-10 mb-5">
+              <h3
+                class="font-semibold text-gray-600 text-xs uppercase w-2/5"
+              >
+                Sản phẩm
+              </h3>
+              <h3
+                class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+              >
+                Số lượng
+              </h3>
+              <h3
+                class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+              >
+                Giá
+              </h3>
+              <h3
+                class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+              >
+                Tổng
+              </h3>
+            </div>
+            <div
+              class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5"
+            >
+              <div class="flex w-2/5">
+                <!-- product -->
+                <div class="w-20">
+                  <img
+                    class="h-24"
+                    src="https://dongtrungsonita.com/wp-content/uploads/2020/05/sp-kho-200g.jpg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex flex-col justify-between ml-4 flex-grow"
+                >
+                  <span class="font-bold text-sm"
+                    >Đông Trùng Hạ Thảo Khô 20gram
+                  </span>
+                  <span class="text-red-500 text-xs"
+                    >Sonita Company</span
+                  >
+                  <a
+                    href="#"
+                    class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                    >Xoá</a
+                  >
+                </div>
+              </div>
+              <div class="flex justify-center w-1/5">
+                <svg
+                  class="fill-current text-gray-600 w-3"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  />
+                </svg>
+
+                <input
+                  class="mx-2 border text-center w-8"
+                  type="text"
+                  value="1"
+                />
+
+                <svg
+                  class="fill-current text-gray-600 w-3"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  />
+                </svg>
+              </div>
+              <span class="text-center w-1/5 font-semibold text-sm"
+                >1.300.000 đ</span
+              >
+              <span class="text-center w-1/5 font-semibold text-sm"
+                >1.300.000 đ</span
+              >
+            </div>
+
+            <div
+              class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5"
+            >
+              <div class="flex w-2/5">
+                <!-- product -->
+                <div class="w-20">
+                  <img
+                    class="h-24"
+                    src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex flex-col justify-between ml-4 flex-grow"
+                >
+                  <span class="font-bold text-sm"
+                    >Xiaomi Mi 20000mAh</span
+                  >
+                  <span class="text-red-500 text-xs">Xiaomi</span>
+                  <a
+                    href="#"
+                    class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                    >Remove</a
+                  >
+                </div>
+              </div>
+              <div class="flex justify-center w-1/5">
+                <svg
+                  class="fill-current text-gray-600 w-3"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  />
+                </svg>
+
+                <input
+                  class="mx-2 border text-center w-8"
+                  type="text"
+                  value="1"
+                />
+
+                <svg
+                  class="fill-current text-gray-600 w-3"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  />
+                </svg>
+              </div>
+              <span class="text-center w-1/5 font-semibold text-sm"
+                >$40.00</span
+              >
+              <span class="text-center w-1/5 font-semibold text-sm"
+                >$40.00</span
+              >
+            </div>
+
+            <div
+              class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5"
+            >
+              <div class="flex w-2/5">
+                <!-- product -->
+                <div class="w-20">
+                  <img
+                    class="h-24"
+                    src="https://drive.google.com/uc?id=1vXhvO9HoljNolvAXLwtw_qX3WNZ0m75v"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex flex-col justify-between ml-4 flex-grow"
+                >
+                  <span class="font-bold text-sm">Airpods</span>
+                  <span class="text-red-500 text-xs">Apple</span>
+                  <a
+                    href="#"
+                    class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                    >Remove</a
+                  >
+                </div>
+              </div>
+              <div class="flex justify-center w-1/5">
+                <svg
+                  class="fill-current text-gray-600 w-3"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  />
+                </svg>
+                <input
+                  class="mx-2 border text-center w-8"
+                  type="text"
+                  value="1"
+                />
+
+                <svg
+                  class="fill-current text-gray-600 w-3"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  />
+                </svg>
+              </div>
+              <span class="text-center w-1/5 font-semibold text-sm"
+                >$150.00</span
+              >
+              <span class="text-center w-1/5 font-semibold text-sm"
+                >$150.00</span
+              >
+            </div>
+
+            <a
+              href="#"
+              class="flex font-semibold text-indigo-600 text-sm mt-10"
+            >
+              <svg
+                class="fill-current mr-2 text-indigo-600 w-4"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"
+                />
+              </svg>
+              Continue Shopping
+            </a>
+          </div>
+
+          <div id="summary" class="w-1/4 px-8 py-10 bg-gray-200">
+            <h1 class="font-semibold text-2xl border-b pb-8">
+              Tổng đơn
+            </h1>
+            <div class="flex justify-between mt-10 mb-5">
+              <span class="font-semibold text-sm uppercase"
+                >Items 3</span
+              >
+              <span class="font-semibold text-sm">590$</span>
+            </div>
+            <div>
+              <label
+                class="font-medium inline-block mb-3 text-sm uppercase"
+                >Shipping</label
+              >
+              <select class="block p-2 text-gray-600 w-full text-sm">
+                <option>Standard shipping - $10.00</option>
+              </select>
+            </div>
+            <div class="py-10">
+              <label
+                for="promo"
+                class="font-semibold inline-block mb-3 text-sm uppercase"
+                >Promo Code</label
+              >
+              <input
+                type="text"
+                id="promo"
+                placeholder="Enter your code"
+                class="p-2 text-sm w-full"
+              />
+            </div>
+            <button
+              class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase"
+            >
+              Apply
+            </button>
+            <div class="border-t mt-8">
+              <div
+                class="flex font-semibold justify-between py-6 text-sm uppercase"
+              >
+                <span>Total cost</span>
+                <span>$600</span>
+              </div>
+
+              <a
+                href="./delivery-progress.html"
+                class="bg-indigo-500 font-semibold hover:bg-indigo-600 p-3 text-sm text-white uppercase w-full"
+              >
+                Thanh toán
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="max-w-screen-xl m-auto p-4">
+      <div class="sm:-mx-4 sm:flex sm:flex-wrap sm:pt-12">
+        <div class="sm:w-full px-4 md:w-1/3">
+          <!-- logo -->
+          <a
+            href="/"
+            class="inline-block hover:opacity-50 text-center"
+          >
+            <img
+              class="w-12 sm:w-28 m-auto"
+              src="./images/logo.png"
+              alt=""
+            />
+            <h2 class="text-xl font-bold whitespace-nowrap">
+              Tien Store
+            </h2>
+          </a>
+          <p class="">
+            Là một cửa hàng uy tín, chuyên cung cấp nông sản sạch, đảm
+            bảo chất lượng
+          </p>
+        </div>
+        <div class="px-4 sm:w-1/2 md:w-1/3 mt-4 md:mt-0">
+          <h6 class="font-bold mb-2">Địa chỉ</h6>
+          <address class="not-italic mb-4">
+            K81/A3 Lê Văn Hiến, Đà Nắng
+          </address>
+          <h6 class="font-bold mb-2">SĐT</h6>
+          <p>0344 70 3838</p>
+        </div>
+        <div class="px-4 mt-6 sm:mt-4 md:mt-0 md:w-1/3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.658257381416!2d108.21196671448398!3d16.031295788904373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219ed52e25555%3A0x77ca5b75b6967dd2!2zQ8O0bmcgVHkgVG5oaCBYdeG6pXQgQuG6o24gUGjhuqduIE3hu4FtIFBhcmFjZWwgUHJvamVjdCBFZHVjYXRpb24!5e0!3m2!1sen!2s!4v1665118545024!5m2!1sen!2s"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js"></script>

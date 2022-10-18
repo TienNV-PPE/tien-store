@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Chi tiet san pham</title>
+    <link href="./css/tailwind/output.css" rel="stylesheet" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.4.0/dist/flowbite.min.css"
+    /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="max-w-screen-xl m-auto p-4">
+      <div class="fij">
+        <!-- logo -->
+        <a href="/" class="inline-block hover:opacity-50 text-center">
+          <img
+            class="w-12 sm:w-28 m-auto"
+            src="./images/logo.png"
+            alt=""
+          />
+          <h2 class="text-xl font-bold whitespace-nowrap">
+            Tien Store
+          </h2>
+        </a>
+        <!-- menu & dangnhap & timkiem -->
+        <div class="flex flex-col items-end space-y-3">
+          <!-- menu & dangnhap -->
+          <section
+            class="hidden sm:flex items-center justify-between space-x-3"
+          >
+            <!-- menu -->
+            <ul class="menu">
+              <li>
+                <a href="#" class="text-blue-500">Trang chủ</a>
+              </li>
+              <li>
+                <a href="#">Giới thiệu</a>
+              </li>
+              <li>
+                <a href="#">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="#">Liên hệ</a>
+              </li>
+            </ul>
+            <!-- dangnhap -->
+            <button class="btn whitespace-nowrap">Đăng nhập</button>
+          </section>
+          <!-- form tim kiem -->
+          <form action="" class="flex rounded overflow-hidden">
+            <input
+              placeholder="Tìm kiếm"
+              type="text"
+              class="input-search"
+            />
+            <button
+              class="bg-blue-600 text-white px-4 py-2 flex items-center space-x-2"
+            >
+              <svg
+                class="h-4 w-4 text-grey-dark"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                />
+              </svg>
+              <span>Tìm</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- MOBILE: menu & dangnhap -->
+      <section
+        class="flex sm:hidden bg-blue-100 py-3 -mx-4 items-center justify-center space-x-3 mt-4"
+      >
+        <!-- menu -->
+        <ul class="menu">
+          <li>
+            <a href="#" class="text-blue-500">Trang chủ</a>
+          </li>
+          <li>
+            <a href="#">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="#">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="#">Liên hệ</a>
+          </li>
+        </ul>
+      </section>
+    </header>
+
+    <!-- main -->
+
+    <main class="bg-gray-50 p-4">
+      <h1 class="text-center text-3xl">Giới thiệu</h1>
+      <div class="max-w-screen-lg m-auto space-y-3 mt-3">
+        <p>
+          Được phát triển và vận hành bởi Tien Store - Đối tác vận
+          hành trực tuyến chính thức của Unilever Việt Nam
+        </p>
+        <div class="">
+          <b>Thông tin liên hệ </b>
+          <ul>
+            <li>Hotline: 0344 70 3838 (8:00 - 21:00, T2-T7)</li>
+            <li>Email: tien.codeby@gmail.com</li>
+            <li>Fanpage: https://www.facebook.com/tiena.lucky/</li>
+          </ul>
+        </div>
+        <div>
+          <b>Thông tin về công ty </b>
+          <ul>
+            <li>Công ty TNHH Tien Store</li>
+            <li>
+              Địa chỉ đăng ký kinh doanh: Căn hộ số thôn Thế Long,
+              x.Tịnh Phong, h.Sơn Tịnh, Quảng Ngãi
+            </li>
+            <li>
+              Giấy chứng nhận đăng ký kinh doanh số 2500677040 do Sở
+              kế hoạch và đầu tư tỉnh Vĩnh Phúc cấp lần đầu ngày 6
+              tháng 1 năm 2022
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <!-- START: Call to action -->
+    <div
+      class="relative bg-cover bg-no-repeat bg-center"
+      style="
+        min-height: 400px;
+        background-image: url('./images/sliders/2.jpeg');
+      "
+      title="Bali, Indonesia"
+    >
+      <div
+        class="flex flex-col justify-center items-center absolute inset-0 bg-black opacity-75 text-center text-white p-10"
+      >
+        <h2 class="font-serif text-2xl md:text-3xl">
+          Bạn cần hỗ trợ
+        </h2>
+        <p>Hãy gọi ngay cho chúng tôi để được tư vấn miễn phí</p>
+        <button
+          class="bg-transparent hover:bg-white text-white font-bold hover:text-black py-2 px-4 my-4 border border-white rounded inline-flex items-center"
+        >
+          <span>0344.70.3838</span>
+          <svg
+            class="ml-2 w-4 h-4 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- END: Call to action -->
+
+    <footer class="max-w-screen-xl m-auto p-4">
+      <div class="sm:-mx-4 sm:flex sm:flex-wrap sm:pt-12">
+        <div class="sm:w-full px-4 md:w-1/3">
+          <!-- logo -->
+          <a
+            href="/"
+            class="inline-block hover:opacity-50 text-center"
+          >
+            <img
+              class="w-12 sm:w-28 m-auto"
+              src="./images/logo.png"
+              alt=""
+            />
+            <h2 class="text-xl font-bold whitespace-nowrap">
+              Tien Store
+            </h2>
+          </a>
+          <p class="">
+            Là một cửa hàng uy tín, chuyên cung cấp nông sản sạch, đảm
+            bảo chất lượng
+          </p>
+        </div>
+        <div class="px-4 sm:w-1/2 md:w-1/3 mt-4 md:mt-0">
+          <h6 class="font-bold mb-2">Địa chỉ</h6>
+          <address class="not-italic mb-4">
+            K81/A3 Lê Văn Hiến, Đà Nắng
+          </address>
+          <h6 class="font-bold mb-2">SĐT</h6>
+          <p>0344 70 3838</p>
+        </div>
+        <div class="px-4 mt-6 sm:mt-4 md:mt-0 md:w-1/3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.658257381416!2d108.21196671448398!3d16.031295788904373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219ed52e25555%3A0x77ca5b75b6967dd2!2zQ8O0bmcgVHkgVG5oaCBYdeG6pXQgQuG6o24gUGjhuqduIE3hu4FtIFBhcmFjZWwgUHJvamVjdCBFZHVjYXRpb24!5e0!3m2!1sen!2s!4v1665118545024!5m2!1sen!2s"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
+    <!-- START: Customer support -->
+    <section
+      x-data="{ open: true, isChat: false }"
+      class="fixed bottom-0 right-0 mr-5 mb-3 flex flex-col items-end space-y-3"
+    >
+      <div
+        x-show="open"
+        class="bg-gray-100 w-[348px] rounded overflow-hidden"
+      >
+        <!-- FORM -->
+        <div x-show="!isChat">
+          <div class="text-white bg-red-600 py-10 px-4 text-center">
+            Nhập thông tin và bắt đầu để Tien-Store phục vụ bạn tốt
+            hơn nhé!
+          </div>
+          <form
+            action="#"
+            class="mx-4 bg-white p-3 -mt-4 space-y-4 rounded border-l-4 border-red-600 shadow"
+          >
+            <input
+              type="text"
+              class="input w-full"
+              placeholder="* Tên"
+            />
+            <input
+              type="text"
+              class="input w-full"
+              placeholder="* Điện thoại"
+            />
+            <input
+              type="text"
+              class="input w-full"
+              placeholder="* Email"
+            />
+            <button
+              class="btn w-full !bg-red-600"
+              @click="isChat=true"
+            >
+              Bắt đầu trò chuyện
+            </button>
+          </form>
+          <div class="text-center">
+            <a
+              href="#"
+              class="text-xs inline-block my-5 hover:bg-gray-300 mx-auto p-2 rounded-full"
+              >Thêm đoạn chat trực tiếp miễn phí vào trang web</a
+            >
+          </div>
+        </div>
+        <!-- CHAT -->
+        <div x-show="isChat">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Distinctio doloribus sint in nihil, similique mollitia
+          culpa, id laboriosam facilis vitae commodi at iure nesciunt,
+          possimus iste velit magnam architecto totam.
+        </div>
+      </div>
+      <!-- BUTTON -->
+      <button
+        class="bg-red-600 w-[60px] h-[60px] rounded-full relative"
+        @click="open = !open"
+      >
+        <span
+          class="absolute top-0 right-0 bg-red-700 h-5 w-5 rounded-full text-sm text-white"
+          >1</span
+        >
+        <i
+          x-show="!open"
+          class="fa-sharp fa-solid fa-comment text-2xl text-white"
+        ></i>
+        <i
+          x-show="open"
+          class="fa-sharp fa-solid fa-close text-2xl text-white"
+        ></i>
+      </button>
+    </section>
+    <!-- END: Customer support -->
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js"></script>
